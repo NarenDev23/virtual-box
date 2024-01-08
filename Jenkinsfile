@@ -20,7 +20,6 @@ pipeline {
                 cleanWs()
             }
         }
-    }
         stage('Checkout from Git') {
             steps {
                 git branch: 'main', url: 'https://github.com/NarenDev23/virtual-box.git'
@@ -50,6 +49,7 @@ pipeline {
                 sh "trivy fs . > trivyfs.txt"
              }
          }
+	}
 
 }
 
